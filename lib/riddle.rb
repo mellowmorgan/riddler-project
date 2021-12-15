@@ -1,4 +1,5 @@
 require 'pry'
+
 class Riddle
   def initialize
     @@index = 0
@@ -66,17 +67,29 @@ class Riddle
       }
     ] 
   end
+
   def self.random
-    @@random_riddles=@@riddles.shuffle().slice(0,5)
+    @@random_riddles = @@riddles.shuffle().slice(0,5)
     @@random_riddles
-  end  
+  end 
+
   def self.random_riddles
     @@random_riddles
   end
+
   def self.index
     @@index
   end
+
   def self.index=(new_index)
-    @@index=new_index
+    @@index = new_index
+  end
+
+  def self.check(user_a, riddle)
+    if user_a == riddle["answer"]
+      true
+    else
+      false
+    end
   end
 end
