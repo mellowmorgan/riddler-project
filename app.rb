@@ -6,13 +6,12 @@ also_reload('lib/**/*.rb')
 
 get('/') do
   Riddle.new()
-  @index = 0
   @riddles = Riddle.random
   erb(:riddler)
 end
 
 get('/:index') do
-  @riddle = @riddles[:index]
-  @index++
+  @riddle = @riddles[params[:index].to_i]
+  
   erb(:riddle)
 end

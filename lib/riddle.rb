@@ -1,7 +1,8 @@
 require 'pry'
 class Riddle
-  
+  attr_accessor(:index)
   def initialize
+    @@index = 0
     @@riddles = [
       {
         "question" => "What gets wet while drying?",
