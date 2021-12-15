@@ -1,10 +1,9 @@
 <div>
-  <h3>Question:</h3>
+  <h3>Question: </h3>
+  <h4><em><%= @riddle["question"] %></em></h4>
   <form action="/<%= @index %>">
-    <div class="form-group">
-      <label for="input" class="form-control">
+      <label for="input">
       <input name="input" class="form-control">
-      <button type="submit"></button>
-    </div>
+      <button type="submit">Continue</button>
   </form
 </div>

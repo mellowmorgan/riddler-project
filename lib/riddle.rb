@@ -1,8 +1,8 @@
 require 'pry'
 class Riddle
-  attr_accessor(:index)
   def initialize
     @@index = 0
+    @@random_riddles = []
     @@riddles = [
       {
         "question" => "What gets wet while drying?",
@@ -64,9 +64,19 @@ class Riddle
         "question" => "I can't be used unless I am broken… What am I?",
         "answer" => "egg"
       }
-    ]
+    ] 
   end
   def self.random
-    @@riddles.shuffle().slice(0,5)
+    @@random_riddles=@@riddles.shuffle().slice(0,5)
+    @@random_riddles
   end  
+  def self.random_riddles
+    @@random_riddles
+  end
+  def self.index
+    @@index
+  end
+  def self.index=(new_index)
+    @@index=new_index
+  end
 end
