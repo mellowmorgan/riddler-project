@@ -3,6 +3,7 @@ require 'pry'
 class Riddle
   def initialize
     @@index = 0
+    @@tries = 0
     @@random_riddles = []
     @@riddles = [
       {
@@ -84,7 +85,14 @@ class Riddle
   def self.index=(new_index)
     @@index = new_index
   end
+  
+  def self.tries
+    @@tries
+  end
 
+  def self.tries=(new_try)
+    @@tries = new_try
+  end
   def self.check(user_a, riddle)
     if user_a == riddle["answer"]
       true
