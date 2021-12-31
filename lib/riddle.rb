@@ -93,6 +93,7 @@ class Riddle
   def self.tries=(new_try)
     @@tries = new_try
   end
+  
   def self.check(user_a, riddle)
     if user_a == riddle["answer"]
       true
